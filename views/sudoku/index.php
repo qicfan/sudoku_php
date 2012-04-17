@@ -1,15 +1,15 @@
 <style>
 body {font-size:18px;}
 .have_zero input {width:30px; height:30px; text-align:center; font-size:16px;}
-.pit_0_0 {background:#D6D6D6;}
-.pit_1_0 {background:#E0E0E0;}
-.pit_2_0 {background:#CACACA;}
-.pit_0_1 {background:#E3E3E3;}
+.pit_0_0 {background:#E6E6E6;}
+.pit_1_0 {background:#737373;}
+.pit_2_0 {background:#E6E6E6;}
+.pit_0_1 {background:#737373;}
 .pit_1_1 {background:#E6E6E6;}
-.pit_2_1 {background:#CCCCCC;}
-.pit_0_2 {background:#B2B2B2;}
-.pit_1_2 {background:#999999;}
-.pit_2_2 {background:#808080;}
+.pit_2_1 {background:#737373;}
+.pit_0_2 {background:#E6E6E6;}
+.pit_1_2 {background:#737373;}
+.pit_2_2 {background:#E6E6E6;}
 </style>
 <table width="500" height="420" border="1" cellpadding="0" cellspacing="0">
 <?php
