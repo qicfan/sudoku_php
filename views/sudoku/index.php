@@ -60,7 +60,7 @@ endfor;
 		var input = $(y + '_' + x);
 		$.ajax({
 			type: 'GET',
-			url: '?r=sudoku/validate',
+			url: '<?php echo $this->createUrl('validate'); ?>',
 			dataType: 'html',
 			data: {
 				'action':'set',

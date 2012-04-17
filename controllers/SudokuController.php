@@ -9,4 +9,12 @@ class SudokuController extends Controller
 			'sudoku'=>$sudoku,
 		));
 	}
+	
+	public function actionValidate() {
+		$x = Yii::app()->request->getParam('x');
+		$y = Yii::app()->request->getParam('y');
+		$z = Yii::app()->request->getParam('z');
+		$result = lvalidate_sudoku(x, y, z);
+		die ($result);
+	}
 }
