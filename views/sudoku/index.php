@@ -6,7 +6,7 @@ for ($y=0;$y<9;$y++):
 <?php
 for ($x=0;$x<9;$x++):
 ?>
-		<td><?php echo $sudoku[$y][$x] > 0 ? $sudoku[$y][$x] : '&nbsp;' ?></td>
+		<td id="td_<?php echo $y . '_' . $x;?>" class="<?php echo $sudoku[$y][$x] > 0 ? 'no_zero' : 'have_zero'?>"><?php echo $sudoku[$y][$x] > 0 ? $sudoku[$y][$x] : '&nbsp;' ?></td>
 <?php
 endfor;
 ?>
