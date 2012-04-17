@@ -1,6 +1,6 @@
 <?php
 
-class SudokuController extends CController
+class SudokuController extends Controller
 {
 	public function actionIndex()
 	{
