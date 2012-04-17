@@ -1,0 +1,10 @@
+runtime/*
+assets/*
+Thumbs.db
+.buildpath
+.project
+.settings/
+.DS_Store
+nbproject/
+config/local.php
+config/mode.conf
