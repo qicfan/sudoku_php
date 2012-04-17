@@ -1,6 +1,15 @@
 <style>
 body {font-size:18px;}
 .have_zero input {width:30px; height:30px; text-align:center; font-size:16px;}
+.pit_0_0 {background:#D6D6D6;}
+.pit_1_0 {background:#E0E0E0;}
+.pit_2_0 {background:#CACACA;}
+.pit_0_1 {background:#E3E3E3;}
+.pit_1_1 {background:#E6E6E6;}
+.pit_2_1 {background:#CCCCCC;}
+.pit_0_2 {background:#B2B2B2;}
+.pit_1_2 {background:#999999;}
+.pit_2_2 {background:#808080;}
 </style>
 <table width="500" height="420" border="1" cellpadding="0" cellspacing="0">
 <?php
@@ -10,8 +19,8 @@ for ($y=0;$y<9;$y++):
 	<tr valign="middle" align="center">
 <?php
 for ($x=0;$x<9;$x++):
-	$jx = (int)$x/3*3;
-	$jy = (int)$y/3*3;
+	$jx = intval($x/3);
+	$jy = intval($y/3);
 ?>
 		<td id="td_<?php echo $y . '_' . $x;?>" class="<?php echo $sudoku[$y][$x] > 0 ? 'no_zero' : 'have_zero'?> pit_<?php echo $jx . '_' . $jy ?>">
 		<?php if ($sudoku[$y][$x] > 0): $suc ++;?>
