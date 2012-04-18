@@ -12,7 +12,7 @@ return array(
 	'timeZone'=>'Asia/Shanghai',
 	'language'=>'zh_cn',
 	//预加载log组件
-	'preload'=>array('sessionCache'),
+	'preload'=>array(),
 
 	// autoloading model and component classes
 	'import'=>array(
@@ -56,26 +56,15 @@ return array(
 		// 远程cache
 		'cache'=>array(
 			'class'=>'ext.cache.ZlibMemCache',
-			'keyPrefix'=>'zeroq.me',//cache key 前缀
+			'keyPrefix'=>'sudoku.zeroq.me',//cache key 前缀
 			'servers'=>array(
-				array('host'=>'127.0.0.1','port'=>40000),
+				array('host'=>'127.0.0.1','port'=>11211),
 			),
 		),
 		//用户组件
 		'user'=>array(
 			'allowAutoLogin'=>true,
 			'loginUrl'=>array('site/login'),
-		),
-		//session组件 多个二级域名访问时需要
-		'session'=>array(
-			'cookieParams' => array('domain' => '.'.implode('.',array_slice(explode(".",strpos($_SERVER['HTTP_HOST'],':') ? substr($_SERVER['HTTP_HOST'],0,strpos($_SERVER['HTTP_HOST'],':')) : $_SERVER['HTTP_HOST']),-2,2)),),
-		),
-		// session集中存放memcache
-		'sessionCache' => array(
-			'class'=>'ext.session.SessionCache',
-			'servers'=>array(
-				array('host'=>'127.0.0.1','port'=>'40000'),
-			),
 		),
 
 		// cookie验证
