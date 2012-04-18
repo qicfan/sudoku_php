@@ -28,7 +28,7 @@ for ($x=0;$x<9;$x++):
 		<?php if ($sudoku[$y][$x] > 0): $suc ++;?>
 		<span><?php echo $sudoku[$y][$x] ?></span>
 		<?php else: ?>
-		<input type='text' id='<?php echo $y . '_' . $x; ?>' name='sudoku_input' />
+		<input type='text' id='<?php echo $y . '_' . $x; ?>' class='sudoku_input' />
 		<?php endif; ?>
 		</td>
 <?php
@@ -45,7 +45,7 @@ endfor;
 	var sudoku_suc = 0;
 	var sudoku_old = <?php echo $suc;?>;
 	var max = 81;
-	$('input[name=sudoku_input]').blur(function(){
+	$('.sudoku_input').blur(function(){
 		var value = this.value;
 		var id = this.id;
 		var idArray = id.split('_');
@@ -55,11 +55,11 @@ endfor;
 			$(this).val('');
 			return false;
 		}
-		validate_sudoku(x, y, value);
+		return validate_sudoku(x, y, value);
 	});
 
 	function validate_sudoku(x, y, value) {
-		var input = $(y + '_' + x);
+		var input = $('#' + y + '_' + x);
 		$.ajax({
 			type: 'GET',
 			url: '<?php echo $this->createUrl('validate'); ?>',
@@ -72,12 +72,13 @@ endfor;
 				},
 			success: function(data){
 				data = parseInt(data);
+				
 				if (data == 0) {
-					input.attr('class', 'error');
+					input.attr('style','color:red;');
 					sudoku_error ++;
 					return;
 				}
-				input.attr('class', 'suc');
+				input.attr('style','color:green;');
 				sudoku_suc ++;
 				return;
 			}
