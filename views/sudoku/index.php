@@ -16,7 +16,7 @@ input {border:none; backgroud:transparent; }
 table {border-top:1px #DDDDDD solid; border-right:1px #DDDDDD solid;}
 td {border-left:#CCCCCC 1px solid; border-bottom:#CCCCCC 1px solid;}
 </style>
-<table width="500" height="420" border="1" cellpadding="0" cellspacing="0">
+<table width="500" height="420"  cellpadding="0" cellspacing="0">
 <?php
 $suc = 0;
 for ($y=0;$y<9;$y++):
