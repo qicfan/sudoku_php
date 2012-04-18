@@ -5,6 +5,7 @@
  */
 $main_conf = require(dirname(__FILE__).'/main.php');
 // 注销掉main中的配置
+unset($main_conf['components']['cache']);
 return CMap::mergeArray(
 	$main_conf,
 	array(
@@ -30,6 +31,16 @@ return CMap::mergeArray(
 				'charset' => 'utf8',
 				'enableProfiling'=>true,
 				'schemaCachingDuration'=>3600,
+			),
+
+			// 远程cache
+			'cache'=>array(
+				'class'=>'ext.cache.ZlibMemCache',
+				'useMemcached' => true,
+				'keyPrefix'=>'sudoku.zeroq.me',//cache key 前缀
+				'servers'=>array(
+					array('host'=>'127.0.0.1','port'=>11211),
+				),
 			),
 
 		),

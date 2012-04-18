@@ -30,6 +30,17 @@ return array(
 
 	// application components
 	'components'=>array(
+		//路由处理组件
+		'urlManager'=>array(
+			'urlFormat'=>'path',
+			'caseSensitive'=>false,		// 是否区分大小写
+			'showScriptName'=>false,	// 显示脚本文件名
+			'useStrictParsing'=>false,	// 404时显示完整路径，默认为false
+			'appendParams'=>true,
+			'rules'=>array(
+				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+			),
+		),
 		// 主库
 		'mdb'=>array(
 			'class'=>'CDbConnection',
@@ -68,6 +79,7 @@ return array(
 		// 远程cache
 		'cache'=>array(
 			'class'=>'ext.cache.ZlibMemCache',
+			'useMemcached' => false,
 			'keyPrefix'=>'sudoku.zeroq.me',//cache key 前缀
 			'servers'=>array(
 				array('host'=>'127.0.0.1','port'=>11211),

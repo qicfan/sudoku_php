@@ -43,7 +43,8 @@ endfor;
 	var sudoku_suc = 0;
 	var sudoku_old = <?php echo $suc;?>;
 	var max = 81;
-	$('sudoku_input').blur(function(){
+	$('input[name=sudoku_input]').blur(function(){
+		alert(this.value);
 		var value = this.value;
 		var id = this.id;
 		var idArray = id.split('_');
@@ -55,7 +56,7 @@ endfor;
 		}
 		validate_sudoku(x, y, value);
 	});
-	
+
 	function validate_sudoku(x, y, value) {
 		var input = $(y + '_' + x);
 		$.ajax({
