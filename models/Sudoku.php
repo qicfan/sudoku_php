@@ -45,8 +45,8 @@ class Sudoku {
 			}
 		}
 		// 判断九宫格是否有重复值
-		$xmin = intval(x/3 * 3);
-		$ymin = intval(y/3 * 3);
+		$xmin = intval($x/3) * 3;
+		$ymin = intval($y/3) * 3;
 		$xmax = $xmin + 2;
 		$ymax = $ymin + 2;
 		for ($i=$ymin; $i<=$ymax; $i++) {
