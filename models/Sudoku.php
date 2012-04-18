@@ -19,12 +19,12 @@ class Sudoku {
 	}
 
 	public function generate() {
-		if (isset($_SESSION['sudoku_data'])) {
-			$this->data = $_SESSION['sudoku_data'];
+		if (isset(Yii::app()->session['sudoku_data'])) {
+			$this->data = Yii::app()->session['sudoku_data'];
 			return;
 		}
 		$sudoku = lgenerate_sudoku();
-		$_SESSION['sudoku_data'] = $sudoku;
+		Yii::app()->session['sudoku_data'] = $sudoku;
 		$this->data = $sudoku;
 		return;
 	}

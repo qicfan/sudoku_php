@@ -12,7 +12,7 @@ return array(
 	'timeZone'=>'Asia/Shanghai',
 	'language'=>'zh_cn',
 	//预加载log组件
-	'preload'=>array(),
+	'preload'=>array('sessionCache'),
 
 	// autoloading model and component classes
 	'import'=>array(
@@ -51,6 +51,18 @@ return array(
 			'charset' => 'utf8',
 			'enableProfiling'=>true,
 			'schemaCachingDuration'=>3600,
+		),
+
+		//session组件 多个二级域名访问时需要
+		'session'=>array(
+			'cookieParams' => array('domain' => '.'.implode('.',array_slice(explode(".",strpos($_SERVER['HTTP_HOST'],':') ? substr($_SERVER['HTTP_HOST'],0,strpos($_SERVER['HTTP_HOST'],':')) : $_SERVER['HTTP_HOST']),-2,2)),),
+		),
+		// session集中存放memcache
+		'sessionCache' => array(
+			'class'=>'ext.session.SessionCache',
+			'servers'=>array(
+				array('host'=>'127.0.0.1','port'=>11211),
+			),
 		),
 
 		// 远程cache
