@@ -1,7 +1,6 @@
 <?php
 
 /**
- * 改写CMemcache,启用zlib压缩，大于20K的，压缩比为0.2
  *
  * @author Terry
  * see {@link http://php.net/manual/zh/memcache.setcompressthreshold.php}

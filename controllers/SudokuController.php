@@ -4,17 +4,19 @@ class SudokuController extends Controller
 {
 	public function actionIndex()
 	{
-		$sudoku = lgenerate_sudoku();
+		$sudoku = new Sudoku();
+		$sudoku->generate();
 		$this->render('index',array(
-			'sudoku'=>$sudoku,
+			'sudoku'=>$sudoku->data,
 		));
 	}
-	
+
 	public function actionValidate() {
 		$x = Yii::app()->request->getParam('x');
 		$y = Yii::app()->request->getParam('y');
 		$z = Yii::app()->request->getParam('z');
-		$result = lvalidate_sudoku(x, y, z);
+		$sudoku = new Sudoku();
+		$result = $sudoku->validate(x, y, z);
 		die ($result);
 	}
 }

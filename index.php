@@ -4,20 +4,18 @@ $yii = 'yii.php';
 $basepath = dirname(__FILE__) . DIRECTORY_SEPARATOR;
 define('BASEPATH', $basepath);
 $config_dir = BASEPATH . 'config';
-// mode.conf文件中存有一个字符串，用来标明当前是哪一种环境，当该文件不存在时，将使用main配置文件，即生产环境。
-// mode.conf option:local,develop,test,performance,mirror
 $mode_file = $config_dir . '/mode.conf';
 
 if (file_exists($mode_file))
 {
 	$mode = trim(file_get_contents($mode_file));
 	$config = $config_dir . '/' . $mode . '.php';
-	
+
 	if (!preg_match("/^\w+$/", $mode))
 		die('mode error!');
 	if (!file_exists($config))
 		die('Mode config file is not exists.');
-	
+
 	if ($mode == 'local' || $mode == 'local_example')
 	{
 		defined('YII_DEBUG') or define('YII_DEBUG', true);
