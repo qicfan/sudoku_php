@@ -2,17 +2,19 @@
 body {font-size:18px;}
 input {border:none; backgroud:transparent; }
 .have_zero input {width:30px; height:30px; text-align:center; font-size:16px;}
-.pit_0_0 {background:#E6E6E6;}
-.pit_1_0 {background:#B8B8B8;}
-.pit_2_0 {background:#E6E6E6;}
-.pit_0_1 {background:#B8B8B8;}
-.pit_1_1 {background:#E6E6E6;}
-.pit_2_1 {background:#B8B8B8;}
-.pit_0_2 {background:#E6E6E6;}
-.pit_1_2 {background:#B8B8B8;}
-.pit_2_2 {background:#E6E6E6;}
+.pit_0_0 {background:#F5F5F5;}
+.pit_1_0 {background:#FCFCFC;}
+.pit_2_0 {background:#F5F5F5;}
+.pit_0_1 {background:#FCFCFC;}
+.pit_1_1 {background:#F5F5F5;}
+.pit_2_1 {background:#FCFCFC;}
+.pit_0_2 {background:#F5F5F5;}
+.pit_1_2 {background:#FCFCFC;}
+.pit_2_2 {background:#F5F5F5;}
 .error {font:#B20000;}
 .suc {font:#008F00;}
+table {border-top:1px #DDDDDD solid; border-right:1px #DDDDDD solid;}
+td {border-left:#CCCCCC 1px solid; border-bottom:#CCCCCC 1px solid;}
 </style>
 <table width="500" height="420" border="1" cellpadding="0" cellspacing="0">
 <?php
