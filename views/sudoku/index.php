@@ -1,5 +1,6 @@
 <style>
 body {font-size:18px;}
+input {border:none; backgroud:transparent; }
 .have_zero input {width:30px; height:30px; text-align:center; font-size:16px;}
 .pit_0_0 {background:#E6E6E6;}
 .pit_1_0 {background:#B8B8B8;}
