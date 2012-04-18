@@ -19,12 +19,12 @@ class Sudoku {
 	}
 
 	public function generate() {
-		$key = self::get_sudoku_key();
-		$sudoku = Yii::app()->cache->get($key);
-		if (!$sudoku) {
-			$sudoku = lgenerate_sudoku();
-			Yii::app()->cache->set($key, $sudoku);
+		if (isset($_SESSION['sudoku_data'])) {
+			$this->data = $_SESSION['sudoku_data'];
+			return;
 		}
+		$sudoku = lgenerate_sudoku();
+		$_SESSION['sudoku_data'] = $sudoku;
 		$this->data = $sudoku;
 		return;
 	}
@@ -57,10 +57,6 @@ class Sudoku {
 			}
 		}
 		return 1;
-	}
-
-	public static function get_sudoku_key() {
-		return 'sudoku_data';
 	}
 }
 
