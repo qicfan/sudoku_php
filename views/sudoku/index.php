@@ -10,8 +10,8 @@ body {font-size:18px;}
 .pit_0_2 {background:#E6E6E6;}
 .pit_1_2 {background:#B8B8B8;}
 .pit_2_2 {background:#E6E6E6;}
-input .error {font-color:#B20000;}
-input .suc {font-color:#008F00;}
+.error {font:#B20000;}
+.suc {font:#008F00;}
 </style>
 <table width="500" height="420" border="1" cellpadding="0" cellspacing="0">
 <?php
@@ -71,6 +71,7 @@ endfor;
 				'random':Math.random()
 				},
 			success: function(data){
+				data = parseInt(data);
 				if (data == 0) {
 					input.attr('class', 'error');
 					sudoku_error ++;
