@@ -44,7 +44,6 @@ endfor;
 	var sudoku_old = <?php echo $suc;?>;
 	var max = 81;
 	$('input[name=sudoku_input]').blur(function(){
-		alert(this.value);
 		var value = this.value;
 		var id = this.id;
 		var idArray = id.split('_');
@@ -64,7 +63,6 @@ endfor;
 			url: '<?php echo $this->createUrl('validate'); ?>',
 			dataType: 'html',
 			data: {
-				'action':'set',
 				'x':x,
 				'y':y,
 				'z':value,
