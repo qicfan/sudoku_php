@@ -17,7 +17,8 @@ class SudokuController extends Controller
 		$z = Yii::app()->request->getParam('z');
 		$sudoku = new Sudoku();
 		$result = $sudoku->validate($x, $y, $z);
-		die ($result);
+		echo $result;
+		return;
 	}
 
 	public function actionList() {

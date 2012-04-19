@@ -6,6 +6,7 @@
 $main_conf = require(dirname(__FILE__).'/main.php');
 // 注销掉main中的配置
 unset($main_conf['components']['cache']);
+unset($main_conf['components']['urlManager']);
 return CMap::mergeArray(
 	$main_conf,
 	array(
