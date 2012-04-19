@@ -18,6 +18,7 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+		'application.extensions.QQueue.*'
 	),
 
 	'modules'=>array(
@@ -130,5 +131,6 @@ return array(
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'qicfan@gmail.com',
+		'QQueue'=> array('driver'=>'memcache', 'driver_handler'=>'cache'),
 	),
 );

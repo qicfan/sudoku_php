@@ -19,4 +19,16 @@ class SudokuController extends Controller
 		$result = $sudoku->validate($x, $y, $z);
 		die ($result);
 	}
+
+	public function actionList() {
+		$queue = QQueue::createQueue('test');
+		$queue->push('A');
+		$queue->push('B');
+		$queue->push('C');
+		$queue->push('D');
+		while (!$queue->isEmpty()) {
+			echo $queue->pop() . '<br />';
+		}
+		return;
+	}
 }
